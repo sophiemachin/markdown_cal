@@ -1,6 +1,7 @@
 """Create a calandar for the current month, in markdown"""
 
 from datetime import datetime, timedelta
+import argparse
 
 week_header = "| M  | T  | W  | T  | F  | S  | S  |\n"
 header_line = "| -  | -  | -  | -  | -  | -  | -  |\n"
@@ -8,14 +9,15 @@ empty_day = "|    "
 
 
 def get_last_date_of_month(today):
-	# Guaranteed to get the next month. Force any_date to 28th and then add 4 days.
+	# Guaranteed to get the next month. Force any_date to 28th and then add 
+	# 4 days.
 	next_month = today.replace(day=28) + timedelta(days=4)
 	 
 	# Subtract all days that are over since the start of the month.
 	return (next_month - timedelta(days=next_month.day)).day
 
 
-def create_first_partial_week(day_of_month):
+def create_first_partial_week(day_of_month, first_day_of_month):
 	week = ""
 
 	for i in range(7):
@@ -29,7 +31,7 @@ def create_first_partial_week(day_of_month):
 	return week, day_of_month
 
 
-def get_remaining_weeks(day_of_month):
+def get_remaining_weeks(day_of_month, last_date_of_month):
 
 	remaining = ""
 
@@ -54,21 +56,44 @@ def get_remaining_weeks(day_of_month):
 
 	return remaining
 
-# today = datetime.today()
-today = datetime(2020, 2, 1)
+def get_month(requested_month):
 
-# Get first day of the month (0 as Mon, 1 as Tues etc)
-first_day_of_month = datetime(today.year, today.month, 1).weekday()
+	day_of_month = 1
 
-# Get last date of the month, 30, 31 etc
-last_date_of_month = get_last_date_of_month(today)
+	# Get first day of the month (0 as Mon, 1 as Tues etc)
+	first_day_of_month = requested_month.weekday()
+
+	# Get last date of the month, 30, 31 etc
+	last_date_of_month = get_last_date_of_month(requested_month)
+
+	first_week, day_of_month = create_first_partial_week(
+		day_of_month, first_day_of_month)
+	remaining_weeks = get_remaining_weeks(day_of_month, last_date_of_month)
+
+	return week_header + header_line + first_week + remaining_weeks
 
 
-day_of_month = 1
+def get_args():
+	today = datetime.today()
+	parser = argparse.ArgumentParser()
+	parser.add_argument('--year', default=today.year, 
+		help='Optional year, default is current year')
+	parser.add_argument('--month', default=today.month,
+		help='Optional month, default is current month')
+	parser.add_argument('--whole_year', action='store_true', 
+		help="Print a whole year's worth of monthly calendars, default is "
+		'just current month')
 
-first_week, day_of_month = create_first_partial_week(day_of_month)
-remaining_weeks = get_remaining_weeks(day_of_month)
+	return parser.parse_args()
 
-cal = week_header + header_line + first_week + remaining_weeks
+
+args = get_args()
+
+requested_month = datetime(int(args.year), int(args.month), 1)
+
+if args.whole_year:
+	print 'do whole year'
+else:
+	cal = get_month(requested_month)
 
 print cal
