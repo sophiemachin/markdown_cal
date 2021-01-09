@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import argparse
 
 week_header = "| M  | T  | W  | T  | F  | S  | S  |\n"
-header_line = "| -  | -  | -  | -  | -  | -  | -  |\n"
+header_line = "| --:| --:| --:| --:| --:| --:| --:|\n"
 empty_day = "|    "
 
 
@@ -22,7 +22,7 @@ def create_first_partial_week(day_of_month, first_day_of_month):
 
 	for i in range(7):
 		if i >= first_day_of_month:
-			week += "| " + str(day_of_month) + "  "
+			week += "|  " + str(day_of_month) + " "
 			day_of_month += 1
 		else:
 			week += empty_day
@@ -42,10 +42,11 @@ def get_remaining_weeks(day_of_month, last_date_of_month):
 				# fill remaining days with blank spaces
 				remaining += empty_day
 			else:
-				remaining  += "| " + str(day_of_month) + " "
+				remaining  += "| "
 				if day_of_month < 10:
 					# padding for single digit dates
 					remaining  += " "
+				remaining += str(day_of_month) + " "
 
 			day_of_month += 1
 		remaining += "|\n"
@@ -87,17 +88,16 @@ def get_args():
 	return parser.parse_args()
 
 def get_month_label():
-	return "## " + requested_month.strftime('%B') + " " \
+	return "### " + requested_month.strftime('%B') + " " \
 		+ requested_month.strftime('%Y') + "\n\n"
 args = get_args()
 
 
 
 if args.whole_year:
-	print 'do whole year'
+
 	cal = ""
 	for i in range(1,13):
-		print i
 		requested_month = datetime(int(args.year), i, 1)
 		cal += get_month_label()
 		cal += get_month(requested_month)
