@@ -86,14 +86,26 @@ def get_args():
 
 	return parser.parse_args()
 
-
+def get_month_label():
+	return "## " + requested_month.strftime('%B') + " " \
+		+ requested_month.strftime('%Y') + "\n\n"
 args = get_args()
 
-requested_month = datetime(int(args.year), int(args.month), 1)
+
 
 if args.whole_year:
 	print 'do whole year'
+	cal = ""
+	for i in range(1,13):
+		print i
+		requested_month = datetime(int(args.year), i, 1)
+		cal += get_month_label()
+		cal += get_month(requested_month)
+		cal += "\n\n"
 else:
-	cal = get_month(requested_month)
+	requested_month = datetime(int(args.year), int(args.month), 1)
+
+	cal = get_month_label()
+	cal += get_month(requested_month)
 
 print cal
