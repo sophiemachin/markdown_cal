@@ -80,9 +80,8 @@ To run a different month AND year:
 
 #### Without Markdown Preview installed
 
-1. Make sure Sublime Text 3 has the package manager available:
-
-  Tools > Install Package Control
+1. Make sure Sublime Text 3 has the package manager available:  
+ Tools > Install Package Control
 
 2. Then open the Command Palette and type install, and select Package Control: Install Package using the arrow keys and then press return. 
 
