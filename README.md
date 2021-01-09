@@ -4,15 +4,17 @@
 
 This is a small script to create markdown calendars, for example here is January 2021:
 
-    ## January 2021
+    ### January 2021
 
     | M  | T  | W  | T  | F  | S  | S  |
-    | -  | -  | -  | -  | -  | -  | -  |
-    |    |    |    |    | 1  | 2  | 3  |
-    | 4  | 5  | 6  | 7  | 8  | 9  | 10 |
+    | --:| --:| --:| --:| --:| --:| --:|
+    |    |    |    |    |  1 |  2 |  3 |
+    |  4 |  5 |  6 |  7 |  8 |  9 | 10 |
     | 11 | 12 | 13 | 14 | 15 | 16 | 17 |
     | 18 | 19 | 20 | 21 | 22 | 23 | 24 |
     | 25 | 26 | 27 | 28 | 29 | 30 | 31 |
+
+This is a standard markdown table with the default head options. The month label is a level 3 heading. The columns are right aligned. 
 
 
 ## Usage 
@@ -50,12 +52,12 @@ To run a different month AND year:
 
 Sublime Text 3 has a package called Markdown Preview which will allow you to generate html from your markdown. The generated markdown will look similar to (depending on the flavour of html you choose)
 
-## January 2021
+### January 2021
 
 | M  | T  | W  | T  | F  | S  | S  |
-| -  | -  | -  | -  | -  | -  | -  |
-|    |    |    |    | 1  | 2  | 3  |
-| 4  | 5  | 6  | 7  | 8  | 9  | 10 |
+| --:| --:| --:| --:| --:| --:| --:|
+|    |    |    |    |  1 |  2 |  3 |
+|  4 |  5 |  6 |  7 |  8 |  9 | 10 |
 | 11 | 12 | 13 | 14 | 15 | 16 | 17 |
 | 18 | 19 | 20 | 21 | 22 | 23 | 24 |
 | 25 | 26 | 27 | 28 | 29 | 30 | 31 |
