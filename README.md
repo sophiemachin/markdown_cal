@@ -2,7 +2,7 @@
 
 ## Example output
 
-This is a small script to create markdown calendars, for example here is January 2021:
+This is a small script to create [markdown](https://daringfireball.net/projects/markdown/) calendars, for example here is January 2021:
 
     ### January 2021
 
@@ -50,7 +50,7 @@ To run a different month AND year:
  
 ## Building an html page with Sublime Text 3
 
-Sublime Text 3 has a package called Markdown Preview which will allow you to generate html from your markdown. The generated markdown will look similar to (depending on the flavour of html you choose)
+Sublime Text 3 has a package called [Markdown Preview](https://packagecontrol.io/packages/MarkdownPreview) which will allow you to generate html from your markdown. The generated markdown will look similar to this (depending on the flavour of html you choose)
 
 ### January 2021
 
