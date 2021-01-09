@@ -19,13 +19,31 @@ Run the script with
 
     python2 cal.py
 
-This will print the output in the terminal.
+This will print the current month as a markdown calendar, in the terminal.
 
-Or to send the output directly to a markdown file, use something like
+To send the output directly to a markdown file, use something like
 
     python2 cal.py > example_output_file.mdown
-    
 
+### Options
+
+To run a whole year instead of just a single month:
+
+    python2 cal.py --whole_year
+    
+To run a different year to the current year (this will run on whatever month we are on now, but for the specified year):
+
+    python2 cal.py --year=1987
+
+To run a different month to the current month, for example March of the current year:
+
+    python2 cal.py --month=3
+    
+To run a different month AND year:
+
+    python2 cal.py --year=1987 --month=3
+
+ 
 ## Building an html page with Sublime Text 3
 
 Sublime Text 3 has a package called Markdown Preview which will allow you to generate html from your markdown. The generated markdown will look similar to (depending on the flavour of html you choose) 
