@@ -50,7 +50,7 @@ To run a different month AND year:
  
 ## Building an html page with Sublime Text 3
 
-Sublime Text 3 has a package called [Markdown Preview](https://packagecontrol.io/packages/MarkdownPreview) which will allow you to generate html from your markdown. The generated markdown will look similar to this (depending on the flavour of html you choose)
+[Sublime Text 3](https://www.sublimetext.com/3) has a package called [Markdown Preview](https://packagecontrol.io/packages/MarkdownPreview) which will allow you to generate html from your markdown. The generated markdown will look similar to this (depending on the flavour of html you choose)
 
 ### January 2021
 
@@ -67,27 +67,27 @@ Sublime Text 3 has a package called [Markdown Preview](https://packagecontrol.io
 
 #### With Markdown Preview installed
 
-Pipe the output to a file
+1. Pipe the output to a file
 
-    python2 cal.py > example_output_file.mdown
+        python2 cal.py > example_output_file.mdown
 
-Open the file in Sublime Text 3 and type markdown into the Command Palette (Tools > Command Palette). 
+2. Open the file in Sublime Text 3 and type markdown into the Command Palette (Tools > Command Palette). 
 
-Select Markdown Preview: Save to html. Choose which styling you want, I usually stick with github. 
+3. Select Markdown Preview: Save to html. Choose which styling you want, I usually stick with github. 
 
-This will generate a file with the same name and a .html extension. 
+4. This will generate a file with the same name and a .html extension. 
 
 
 #### Without Markdown Preview installed
 
-Make sure Sublime Text 3 has the package manager available.
+1. Make sure Sublime Text 3 has the package manager available:
 
-Tools > Install Package Control
+  Tools > Install Package Control
 
-Then open the Command Palette and type install, and select Package Control: Install Package using the arrow keys and then press return. 
+2. Then open the Command Palette and type install, and select Package Control: Install Package using the arrow keys and then press return. 
 
-When the Package Control Manager is open, type Markdown Preview, select and press return. The package will be installed. 
+3. When the Package Control Manager is open, type Markdown Preview, select and press return. The package will be installed. 
 
-TO use the package, type open the Command Pallette and type markdown, and select Markdown Preview: Save to html. 
+4. To use the package and generate the html, type open the Command Pallette and type markdown, and select Markdown Preview: Save to html. 
 
-This will generate a file with the same name and a .html extension in the same folder that the source file is in. 
+5. This will generate a file with the same name and a .html extension in the same folder that the source file is in. 
