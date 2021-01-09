@@ -4,6 +4,8 @@
 
 This is a small script to create markdown calendars, for example here is January 2021:
 
+    ## January 2021
+
     | M  | T  | W  | T  | F  | S  | S  |
     | -  | -  | -  | -  | -  | -  | -  |
     |    |    |    |    | 1  | 2  | 3  |
@@ -46,7 +48,9 @@ To run a different month AND year:
  
 ## Building an html page with Sublime Text 3
 
-Sublime Text 3 has a package called Markdown Preview which will allow you to generate html from your markdown. The generated markdown will look similar to (depending on the flavour of html you choose) 
+Sublime Text 3 has a package called Markdown Preview which will allow you to generate html from your markdown. The generated markdown will look similar to (depending on the flavour of html you choose)
+
+## January 2021
 
 | M  | T  | W  | T  | F  | S  | S  |
 | -  | -  | -  | -  | -  | -  | -  |
